@@ -22,19 +22,19 @@ export async function getStaticPaths() {
   return {
     fallback: false,
     paths: meetups.map((meetup) => ({
-      params: { meetupId: meetup._id.toString() },
+      params: { meetUpId: meetup._id.toString() },
     })),
   };
 }
 
 export const getStaticProps = async (context) => {
-  const meetupId = context.params.meetupId;
+  const meetUpId = context.params.meetUpId;
   const client = await new MongoClient(process.env.MONGO_URI);
   client.connect();
   const db = client.db();
   const meetupCollection = db.collection("meetups");
   const selectedMeetup = await meetupCollection.findOne({
-    _id: ObjectId(meetupId),
+    _id: ObjectId(meetUpId),
   });
   client.close();
   return {
