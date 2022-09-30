@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 import Layout from "../../components/layout/Layout";
 
@@ -12,7 +11,6 @@ const NewMeetupPage = () => {
       },
     });
     const data = await response.json();
-    console.log(data);
   };
 
   return (

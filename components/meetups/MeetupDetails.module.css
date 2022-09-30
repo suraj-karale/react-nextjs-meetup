@@ -3,4 +3,7 @@
 }
 
 .detail img {
+  height: 350px;
+  width: 500px;
+  margin: 50px;
 }
